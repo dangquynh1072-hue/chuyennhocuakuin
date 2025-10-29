@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuin's Vocabulary App</title>
+    <link rel="stylesheet" href="css/vocab.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Kuin's Vocabulary App 🌿</h1>
+        <div class="btn-group">
+            <button id="addWordBtn">＋ Thêm từ</button>
+            <button id="reviewBtn">🧠 Ôn tập</button>
+            <button id="exportBtn">💾 Xuất JSON</button>
+            <button id="importBtn">📂 Nhập JSON</button>
+            <input type="file" id="fileInput" style="display:none;">
+            <button id="themeToggle">☀️ / 🌙</button>
+        </div>
+        <!-- 🎵 Nút mở trình phát nhạc -->
+        <button id="musicBtn" style="
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 999;
+">🎵</button>
+
+        <!-- 🎧 Hộp trình phát nhạc -->
+        <div id="musicPlayer" style="
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 280px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: none;
+  z-index: 1000;
+">
+            <h4 style="margin-top:0;">🎶 Nghe nhạc Lofi</h4>
+            <input type="text" id="musicLink" placeholder="Dán link YouTube..."
+                style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px;">
+            <div style="display:flex;justify-content:space-between;margin-top:8px;">
+                <button id="playMusic">Phát</button>
+                <button id="stopMusic">Dừng</button>
+                <button id="closeMusic">Đóng</button>
+            </div>
+            <div id="musicFrame" style="margin-top:8px;"></div>
+        </div>
+
+    </header>
+
+    <main id="mainSection">
+        <section id="wordList"></section>
+    </main>
+
+    <!-- Form thêm từ -->
+    <div id="addModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Thêm từ mới</h2>
+            <input id="wordInput" placeholder="Từ / 汉字">
+            <input id="pinyinInput" placeholder="Pinyin / Cách đọc">
+            <input id="meaningInput" placeholder="Nghĩa tiếng Việt">
+            <textarea id="exampleInput" placeholder="Ví dụ câu"></textarea>
+            <input id="audioInput" placeholder="Link audio (tùy chọn)">
+            <input id="imageInput" placeholder="Link ảnh minh họa (tùy chọn)">
+            <div class="modal-buttons">
+                <button id="saveWordBtn">Lưu</button>
+                <button id="cancelAddBtn">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flashcard ôn tập -->
+    <div id="reviewSection" class="hidden">
+        <div class="flashcard" id="flashcard">
+            <div id="wordFront"></div>
+            <div id="wordBack" class="hidden">
+                <p id="meaning"></p>
+                <p id="example"></p>
+                <img id="imageDisplay" class="hidden" alt="Ảnh minh họa">
+                <audio id="audioPlayer" controls class="hidden"></audio>
+            </div>
+        </div>
+        <div class="review-buttons">
+            <button id="showMeaningBtn">Hiện nghĩa</button>
+            <button id="againBtn">Quên</button>
+            <button id="hardBtn">Khó</button>
+            <button id="goodBtn">Tốt</button>
+            <button id="easyBtn">Dễ</button>
+            <button id="backToListBtn">← Quay lại</button>
+        </div>
+    </div>
+
+    <script src="js/vocab.js"></script>
+</body>
+
+</html>

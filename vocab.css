@@ -1,0 +1,146 @@
+/* ============ 🌿 Kuin's Vocab CSS ============ */
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: #f9fafb;
+  --text: #222;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --card-bg: #2a2a2a;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 5px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.btn-group button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0078ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-group button:hover {
+  background: #005fcc;
+}
+
+#wordList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-content input,
+textarea {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.modal-buttons {
+  text-align: right;
+}
+
+.flashcard {
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--shadow);
+  max-width: 400px;
+  text-align: center;
+}
+
+#imageDisplay {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.review-buttons {
+  text-align: center;
+}
+
+.review-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #0078ff;
+  color: white;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background: #005fcc;
+}
